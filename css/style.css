@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: lightgreen;
+}
+
+.btn{
+    background: white;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid black;
+    border-radius: 30px;
+}
+
+.btn:hover{
+    background: lightblue;
+}
+
+.btn:active{
+    transform: scale(0.99);
+}
