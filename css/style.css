@@ -4,19 +4,24 @@
 }
 
 body{
-    background: lightgreen;
+    background: lightcyan;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .btn{
-    background: white;
-    padding: 5px;
+    color: lightcyan;
+    font-size: 18px;
+    background: blue;
+    padding: 6px;
     margin: 5px;
-    border: 1px solid black;
+    border: 1px solid blue;
     border-radius: 30px;
 }
 
 .btn:hover{
-    background: lightblue;
+    background: lightcyan;
+    border: 2px solid blue;
+    color: blue;
 }
 
 .btn:active{
