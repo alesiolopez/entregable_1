@@ -19,6 +19,7 @@ body{
 }
 
 .btn:hover{
+    cursor:pointer;
     background: lightcyan;
     border: 2px solid blue;
     color: blue;
