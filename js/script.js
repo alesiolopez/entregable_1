@@ -1,36 +1,48 @@
-function Programa(){
-    alert("Ejecutando programa.")
-    let accion = prompt("Dime qué hacer: Saltar, Correr o Comer.");
-    let repeticion = prompt("Ingresar la cantidad de veces que quiere realizar la acción. Entre 1 y 10.")
+let voto_socio = "";
+let voto_a = 0;
+let voto_b = 0;
+let voto_nulo = 0;
+let cantidad_votos = 0;
 
-    if(repeticion > 0 && repeticion <= 10){
-        if(repeticion <= 5){
-            for (let i = 0; i < repeticion; i++) {
-                alert(accion + ". Cantidad de veces: " + (i+1) + " de " + repeticion);
-            }
-        } else if(repeticion <= 10){
-            for (let i = 0; i < repeticion; i++) {
-                alert("Súper " + accion + "!. Cantidad de veces: " + (i+1) + " de " + repeticion);
-            }
-        } 
-    }else{
-        alert("Ingresa la cantidad entre 1 y 10. Vuelve a intentar rey.");
+alert('Bienvenidos al sistema de votación Pepito JR.')
+console.log('Hola Socio del Club, por favor siga las indicaciones de entrada.');
+
+//BUCLE CON VOTACIÓN.
+while(voto_socio != "SALIR"){
+    voto_socio = prompt('Para votar al PARTIDO A ingresar A. Para votar al PARTIDO B ingresar B. Para salir, escribir SALIR')
+    if(voto_socio == "A" || voto_socio == "a"){
+        voto_a++; //Sumo voto.
+        cantidad_votos++;
+        console.log('YA VOTÓ');
+    } else if(voto_socio == "b" || voto_socio == "B"){
+        voto_b++; //Sumo voto.
+        cantidad_votos++;
+        console.log('YA VOTÓ');
+    } else if(voto_socio == "SALIR"){
+        console.log('Saliendo del programa de votación.');
+    } else{
+        voto_nulo++; //Sumo voto.
+        cantidad_votos++;
+        console.log('YA VOTÓ');
     }
-
-    let edad = prompt("Ingresa ahora tu edad para saber en qué etapa estas.");
-
-    if(edad >= 0 && edad <= 5){
-        alert("Estas en la etapa de Primera Infancia");
-    } else if (edad >= 6 && edad <= 11){
-        alert("Estas en la etapa de Infancia");
-    } else if(edad >= 12 && edad < 18){
-        alert("Estas en la etapa de Adolescencia");
-    } else if(edad >= 18 && edad <= 26){
-        alert("Estas en la etapa de Juventud");
-    } else if(edad >= 27 && edad <= 59){
-        alert("Estas en la etapa de Adultez");
-    }else if(edad >= 60){
-        alert("Estas en la etapa de Persona Mayor");
-    }
-alert("Gracas por utilizar le programa rey.")
 }
+
+//MOSTRANDO RESULTADOS, SI GANÓ UNO O SI EMPATARON
+console.log('RESULTADO:')
+if(voto_a > voto_b){
+    /* console.log('GANÓ el PARTIDO A con',voto_a,'votos.'); */
+    console.log('GANÓ el PARTIDO A con el',((voto_a*100)/cantidad_votos).toFixed(2),'% de votos.')
+    console.log('El PARTIDO B pierde con el',((voto_b*100)/cantidad_votos).toFixed(2),'% de votos.');
+}else if(voto_a < voto_b){
+    /* console.log('GANÓ el PARTIDO B con',voto_b,'votos.'); */
+    console.log('GANÓ el PARTIDO B con el',((voto_b*100)/cantidad_votos).toFixed(2),'% de votos.')
+    console.log('El PARTIDO A pierde con',((voto_a*100)/cantidad_votos).toFixed(2),'% de votos.');
+}else{
+    console.log('Empataron ambos partidos con',voto_a,'votos cada uno.');
+}
+
+//MOSTRANDO VOTACIONES NULAS
+console.log('Hubo un total de',((voto_nulo*100)/cantidad_votos).toFixed(2),'% de votos nulos.');
+
+//VOTOS TOTALES:
+console.log('Votos TOTALES:', cantidad_votos);
