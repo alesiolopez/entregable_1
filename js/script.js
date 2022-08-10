@@ -44,12 +44,18 @@ if(voto_a > voto_b){
     /* console.log('GANÓ el PARTIDO B con',voto_b,'votos.'); */
     console.log('GANÓ el PARTIDO B con el',((voto_b*100)/cantidad_votos).toFixed(2),'% de los votos. Un total de',voto_b,'votos.')
     console.log('El PARTIDO A pierde con',((voto_a*100)/cantidad_votos).toFixed(2),'% de los votos. Un total de',voto_a,'votos.');
-}else if(voto_a == voto_b){
+}else if(voto_a == voto_b && voto_a != 0 && voto_b != 0){
     console.log('Empataron ambos partidos con',voto_a,'votos cada uno.');
+}else if(voto_a == 0 && voto_b == 0){
+    console.log('No hubo votos. Reiniciar el programa de votación por favor.')
 }
 
 //MOSTRANDO VOTACIONES NULAS
-console.log('Hubo un total de',((voto_nulo*100)/cantidad_votos).toFixed(2),'% de votos nulos.');
+if(voto_nulo >0){
+    console.log('Hubo un total de',((voto_nulo*100)/cantidad_votos).toFixed(2),'% de votos nulos.');
+} else{
+    console.log('No hubo votos nulos.')
+}
 
 //VOTOS TOTALES:
 console.log('Votos TOTALES:', cantidad_votos);
